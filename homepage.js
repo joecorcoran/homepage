@@ -1,4 +1,4 @@
-window.onload = (function() {
+window.onload = function() {
   var greeter = new Greeter(document.getElementById('greeting'), { 
     multiplier: 1.2,
     onEnd: function() {
@@ -16,4 +16,4 @@ window.onload = (function() {
     'You should probably just check out one of these links:'
   ]);
   greeter.run(10000);
-}());
+};
