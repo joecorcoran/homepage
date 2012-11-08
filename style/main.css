@@ -1,6 +1,7 @@
 body {
   font-family: Helvetica Neue, Arial, sans-serif;
-  font-size: 22px;
+  font-size: 24px;
+  line-height: 1.5em;
   color: #F2F2F2;
   background: #222 url(../img/navy_blue.png);
   text-shadow: 0 2px 1px rgba(0, 0, 0, 0.8);
@@ -8,7 +9,9 @@ body {
 
 h1 {
   font-size: 2.5em;
+  line-height: 0.75em;
   font-family: "Nixie One", Georgia, Times New Roman, serif;
+  margin: 0 0 40px;
 }
 
 a {
@@ -20,9 +23,11 @@ a:hover {
 }
 
 #container {
-  width: 750px;
-  margin: 0 auto;
-  padding: 50px 0 0;
+  width: 580px;
+  margin: 60px auto 0 auto;
+  padding: 0 20px;
+  border-left: 1px dotted #777;
+  overflow: hidden;
 }
 
 footer {
@@ -39,6 +44,7 @@ footer {
   margin: 0;
   padding: 0;
   float: left;
+  line-height: 1.2em;
 }
 .links li:before {
   content: '\2014';
