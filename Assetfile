@@ -1,0 +1,15 @@
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+require 'filters/stylesheet'
+
+# This is required until a new version of rake-pipeline is released.
+# When the tmp directory exists, an attempt is made to parse datetimes
+# using DateTime, which is not available in this project.
+require 'fileutils'
+FileUtils.rm_rf 'tmp'
+
+output 'assets'
+input 'source' do
+  match '*.css' do
+    filter Stylesheet
+  end
+end
