@@ -1,0 +1,221 @@
+$bg: #FEFEFE;
+$inverse: #46A8AB;
+$text: #666;
+$text-print: #333;
+$link: $inverse;
+$inverse-link: #EDE9C8;
+$inverse-button: #278E91;
+$muted: #999;
+
+html {
+  background: $bg;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: $text;
+  font-size: 24px;
+  line-height: 1.4em;
+}
+
+body {
+  margin: 30px 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.75em;
+  line-height: 1em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.25em;
+  line-height: 1em;
+  margin: 20px 0 0;
+}
+
+p {
+  margin: 20px 0 0;
+}
+
+a {
+  color: $link;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+li {
+  padding: 0 0 10px 20px;
+  list-style-type: none;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAK0lEQVQYV2NkIAAYYfIzZ878j6w2PT0dLAcm0CVhCkGK6KUAmztQHInPpwCbYBgJ/z5pLwAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  background-position: 0 0.6em;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.3em 0.75em;
+  background: $inverse-link;
+  border-radius: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  &:after {
+    content: ' \2192';
+    color: $bg;
+  }
+  &:hover:after {
+    color: $link;
+  }
+}
+
+.block, #top {
+  width: 100%;
+  padding: 1em 0 6em;
+  position: relative;
+  box-shadow: inset 0 -5px 5px -5px rgba(0, 0, 0, 0.4);
+  section {
+    padding: 40px 0 0;
+    box-shadow: none;
+    &:first-child {
+      padding: 0;
+    }
+  }
+  .content {
+    width: 700px;
+    margin: 0 auto;
+  }
+  h1 {
+    display: inline-block;
+    position: absolute;
+    top: -1em;
+    padding: 0;
+    width: inherit;
+    text-align: center;
+    span {
+      background: $bg;
+      padding: 5px 20px 0;
+      border-radius: 3px 3px 0 0;
+      box-shadow: 5px 0 5px -5px rgba(0, 0, 0, 0.5);
+    }
+  }
+  header p {
+    font-size: 0.8em;
+    line-height: 0.8em;
+  }
+}
+
+#top {
+  border: 0;
+  h1 {
+    display: block;
+    position: static;
+    font-size: 2em;
+    margin: 0 0 30px;
+  }
+}
+
+.muted {
+  color: $muted;
+}
+
+.reduced {
+  font-size: 0.8em;
+}
+
+.action {
+  text-align: center;
+}
+
+.intro {
+  text-align: center;
+}
+
+@media screen {
+
+  .inverse, .inverse h1 span {
+    background: $inverse;
+    color: $bg;
+    li {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAK0lEQVQYV2NkIAAYYfLqfRP/I6u9WZQPlgMT6JIwhSBF9FKAzR0ojsTnUwBY4BgJBMuXAwAAAABJRU5ErkJggg==");
+    }
+    a {
+      color: $inverse-link;
+    }
+    .button {
+      background: $inverse-button;
+      color: $bg;
+      &:after {
+        color: $inverse;
+      }
+      &:hover:after {
+        color: $bg;
+      }
+    }
+  }
+
+}
+
+@media print {
+
+  @page {
+    margin: 80px 120px 120px;
+  }
+
+  @page :first {
+    margin-top: 180px;
+  }
+
+  html {
+    font-size: 20px;
+    color: $text-print;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  #top {
+    box-shadow: none;
+  }
+
+  .block {
+    box-shadow: none;
+    page-break-before: always;
+    page-break-inside: avoid;
+    h1 {
+      display: block;
+      position: static;
+      text-align: left;
+      margin-bottom: 1.75em;
+      span {
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+    .content {
+      width: 100%;
+    }
+  }
+
+  .button {
+    color: inherit;
+    background: none;
+    text-decoration: underline;
+    &:after {
+      content: none;
+    }
+  }
+
+}
